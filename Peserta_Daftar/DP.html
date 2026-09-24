@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pendaftaran Peserta</title>
+    <link rel="stylesheet" href="DP.css" />
+  </head>
+  <body>
+    <div class="register-container">
+      <div class="register-header">
+        <h2>Silahkan Daftar</h2>
+      </div>
+
+      <form action="/register-endpoint" method="POST">
+        <div class="form-group">
+          <label>Nama Lengkap</label>
+          <input type="text" placeholder="Silahkan Ketikkan Nama" required />
+        </div>
+
+        <div class="form-group">
+          <label>NPM</label>
+          <input
+            type="number"
+            required
+            onwheel="this.blur()"
+            placeholder="Silahkan Ketikkan NPM"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Jurusan</label>
+          <select required>
+            <option value="" disabled selected hidden>
+              Silahkan Pilih Jurusan
+            </option>
+            <option value="Sistem Informasi">Sistem Informasi</option>
+            <option value="Teknologi Industri">Teknologi Industri</option>
+            <option value="Manajemen Industri">Manajemen Industri</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Kelas</label>
+          <input type="text" placeholder="Silahkan Ketikkan Kelas" required />
+        </div>
+
+        <div class="form-group">
+          <label>Nomor Whatsapp</label>
+          <input
+            type="number"
+            required
+            onwheel="this.blur()"
+            placeholder="Silahkan Ketikkan Nomor Whatsapp"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="text" placeholder="Silahkan Ketikkan E-mail" required />
+        </div>
+
+        <div class="form-group">
+          <label>Pilihan Kursus</label>
+          <select required>
+            <option value="" disabled selected hidden>
+              Silahkan Pilih Kursus
+            </option>
+            <option value="animasi">Animasi</option>
+            <option value="multimedia">Multimedia</option>
+          </select>
+        </div>
+
+        <!-- Input For The Button -->
+        <button type="submit" class="register-btn">Daftar</button>
+      </form>
+
+      <!--Java Script For the Daftar Button-->
+      <script>
+        document
+          .getElementById("registerForm")
+          .addEventListener("submit", async function (e) {
+            e.preventDefault(); // stop default refresh
+
+            // collect form data
+            const formData = new FormData(this);
+
+            try {
+              // send to backend
+              const response = await fetch(this.action, {
+                method: this.method,
+                body: formData,
+              });
+
+              if (response.ok) {
+                // ✅ redirect to confirmation page
+                window.location.href = "SD.html";
+              } else {
+                alert("Terjadi kesalahan saat mendaftar. Silakan coba lagi.");
+              }
+            } catch (err) {
+              console.error(err);
+              alert("Tidak dapat terhubung ke server.");
+            }
+          });
+      </script>
+      <!--Java Script For the Daftar Button-->
+    </div>
+  </body>
+</html>
