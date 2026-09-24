@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
+  overflow: hidden;
+}
+.app {
+  display: flex;
+  height: 100vh;
+}
+/* Sidebar */
+.sidebar {
+  width: 208px;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.logo-area {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-icon {
+  width: 32px;
+  height: 32px;
+}
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #60a5fa;
+  letter-spacing: 0.5px;
+}
+.nav {
+  flex: 1;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: #9ca3af;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+.nav-item:hover {
+  color: #fff;
+  background-color: #262626;
+}
+.nav-item.active {
+  background-color: #3a3a3a;
+  color: #fff;
+}
+/* Main */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+/* Header */
+.header {
+  height: 64px;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  flex-shrink: 0;
+}
+.header-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #3a3a3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #9ca3af;
+}
+/* Content */
+.content {
+  flex: 1;
+  overflow: auto;
+  padding: 10px;
+}
+.table-container {
+  background-color: #141414;
+  border-radius: 20px;
+  overflow-x: hidden;
+  padding: 10px;
+  width: 100%;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center; /* center all content */
+  table-layout: auto;
+}
+
+.styled-table thead {
+  background-color: #1f1f1f;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 15px 11px;
+  font-size: 14px; /* balanced size */
+  line-height: 1.6; /* adds vertical spacing */
+  color: #e0e0e0;
+  border-bottom: 1px solid #2a2a2a;
+  white-space: nowrap;
+}
+
+.styled-table th {
+  font-weight: 600;
+  color: #60a5fa;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #222;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+thead {
+  background-color: #0f0f0f;
+}
+
+/* Apply border to the whole row */
+tbody tr {
+  border-top: 7px solid #2a2a2a;
+  border-bottom: 7px solid #2a2a2a;
+}
+
+th {
+  font-weight: 500;
+  color: #d1d5db;
+}
+
+.center {
+  text-align: center;
+}
+
+tbody tr:hover {
+  background-color: #1a1a1a;
+}
+
+td:last-child {
+  background: transparent; /* ensures border shows behind the button */
+}
+
+/* Buttons */
+.action-btn {
+  margin: 0 4px;
+  text-align: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #60a5fa;
+  color: #121212;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.action-btn:hover {
+  background: #3b82f6;
+  padding: 10px 20px;
+}
+
+.action-btn.delete {
+  background: #ef4444;
+  color: #fff;
+}
+
+.action-btn.delete:hover {
+  background: #dc2626;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a;
+}
